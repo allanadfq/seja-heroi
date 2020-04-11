@@ -1,0 +1,39 @@
+.:NODE JS:.
+npm init -y
+npm install express
+node index.js
+npm install nodemon -D
+npm start
+npm install knex
+npm install sqlite3
+npx knex init
+npx knex migrate:make create_ongs
+npx knex migrate:latest
+npm install cors
+
+-Por recomendação, é sempre bom criar uma pasta src, que é onde fica todo o codigo criado.
+-Para importar algo para um arquivo no node, atribui-se a uma variavel o: require('oqueDeveSerImportado'); 
+-Por recomendação, é bom utilizar o app.use(express.json), o express vai converter o json recebido no corpo da requisição em um objeto javascript. E deve ser utilizado antes das rotas.
+-Para usar o nodemon, no arquivo package.json, colocar como um script o: "start":"nodemon arquivo.js";
+-
+ Rota: é o conjunto completo; recurso: é tudo o que vem depois da barra;
+ Metodos:
+	-GET: Buscar/listar uma informação no back-end;
+	-POST: Criar uma informação no back-end;
+	-PUT: Alterar uma informação no back-end;
+	-DELETE: Deletar uma informação no back-end;
+ Parametros (o resquest é onde sao guardados os dados que veem atraves da requisicao, enquanto o response é responsavel por devolver uma resposta ao usuario):
+ 	-Query Params: Parametros nomeados enviados na rota após a "?" e geralmente serve para filtro, paginação. Para acessar na rota: request.query;
+	-Route Params: Parametros utilizados para identificar recursos. Para acessar na rota: request.params;
+	-Request Body: Corpo da requisição, utilizado para criar ou alterar recursos. Para acessar na rota: request.body;
+https://expressjs.com/pt-br/guide/routing.html
+-No node o module.exports é utilizado para exportar uma variavel de dentro de um arquivo;
+-Ao se utilizar o knex, tem que lembrar de colocar no knexfile o caminho em que o banco está;
+-E ao utilizar migrations, tem que lembrar de colocar o objeto migration e seu directory como objeto no knexfile;
+-Lembrar de adicionar o useNullAsDefault: true apos a configuração da migration no knexfile;
+-O crypto pode ser usado para gerar um id aleatorio. 1º é necessario importar o crypto. EX: const id = crypto.randomBytes(4).toString('HEX');
+
+
+.:REACT:.
+npx create-react-app nomeProjeto
+npm start
